@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-body {
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  body {
     font-family: "Poppins", sans-serif;
   }
   .navbar .right img {
@@ -11,7 +11,7 @@ body {
     justify-content: space-between;
     padding: 64px 0;
   }
-  .navbar .bar {
+  .navbar .bar1, .bar2, .bar3 {
     background-color: black;
     height: 4px;
     width: 36px;
@@ -22,6 +22,39 @@ body {
     height: 50px;
     width: 50px;
     display: none;
+  }
+  .navbar .hamburger:hover {
+    cursor: pointer;
+  }
+  .mobilenav {
+    width: 80px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: -160px;
+    padding: 16px;
+    transition: transform 0.5s;
+  }
+  .opendrawer {
+    transform: translateX(-160px );
+  }
+  .mobilenav img {
+    width: 24px;
+    height: 24px;
+  }
+  .mobilenav a {
+    text-decoration: none;
+    color: black;
+    margin: 16px 0;
+  }
+  .mobilenav a:hover {
+    text-decoration: underline;
   }
   .container {
     max-width: 90%;
@@ -186,4 +219,44 @@ body {
     .footer {
         padding: 32px;
   }
+  }
+
+.animateBar1 {
+    animation: rotatebar1 1s;
+    animation-fill-mode: forwards;
+  }
+  .animateBar2 {
+    animation: fadebar2 1s;
+    animation-fill-mode: forwards;
+  }
+  .animateBar3 {
+    animation: rotatebar3 1s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadebar2 {
+    from {
+      transform: scalex(1);
+      opacity: 1;
+    }
+    to {
+      transform: scalex(0);
+      opacity: 0;
+    }
+  }
+  @keyframes rotatebar1 {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(45deg)  translate(4px, 10px);
+    }
+  }
+  @keyframes rotatebar3 {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(-45deg) translate(4px, -10px);
+    }
   }
